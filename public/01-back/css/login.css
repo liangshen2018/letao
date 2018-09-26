@@ -6,3 +6,10 @@ body {
 .mt_150 {
   margin-top: 150px
 }
+
+.panel .panel-heading {
+  font-size: 20px;
+  height: 60px;
+  line-height: 40px;
+  text-align: center
+}
