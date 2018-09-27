@@ -16,7 +16,6 @@ $(function () {
        },
        dataType: "json",
        success : function ( info ) {
-         console.log(info);
          $('tbody').html(template('tmp',info))
          
         //  渲染分页
@@ -27,7 +26,6 @@ $(function () {
             size:"small",//设置控件的大小，mini, small, normal,large
             onPageClicked:function(event, originalEvent, type,page){
               //为按钮绑定点击事件 page:当前点击的按钮值
-              console.log(page);
               currentPage = page 
               reader()
             }
@@ -39,7 +37,21 @@ $(function () {
   
   // 禁用
 
-  $('tbody').on('click','.btn-disable',function () {
-     
+  $('tbody').on('click','.btn',function () {
+     $('#usermodal').modal('show')
+     var id  = $(this).parent().data('id')
+     var isDelete = $(this).hasClass('btn-danger') ? 0 : 1
+     $('#confirm').click(function () {
+       $.ajax({
+          type:'post',
+          url: '/user/updateUser',
+          data : {id:id,isDelete:isDelete},
+          dataType:'json',
+          success: function (info) {
+             $('#usermodal').modal('hide')
+             reader()
+          }
+       })
+     })
   })
 })
