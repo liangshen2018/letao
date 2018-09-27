@@ -12,6 +12,9 @@ ul,ol {
   padding: 0;
 }
 
+.red {
+  color: red
+}
 
 .lt_side {
   width: 180px;
@@ -19,6 +22,11 @@ ul,ol {
   position: fixed;
   background-color: #222D32;
   z-index: 999;
+  left: 0;
+  transition: all 1s;
+}
+.lt_side.current {
+  left: -180px; 
 }
 
 .lt_side .title a{
@@ -64,7 +72,12 @@ ul,ol {
 }
 .lt_side .nav .child a {
    padding-left: 60px;
-   display: none;
+}
+.lt_side .nav .child {
+  display: none;
+}
+.lt_side .nav .child.current {
+  display: block
 }
 .lt_side .nav li a.current {
   border-color: #367FA9;
@@ -76,7 +89,11 @@ ul,ol {
 .lt_main {
   padding-left: 180px;
   padding-top: 50px;
+  transition: all 1s;
   height: 1000px;
+}
+.lt_main.current {
+  padding-left: 0;  
 }
 .lt_header {
   height: 50px;
@@ -87,6 +104,10 @@ ul,ol {
   z-index: 998;
   top: 0;
   left: 0;
+  transition: all 1s;
+}
+.lt_header.current {
+  padding-left: 0;
 }
 
 .lt_header a {
