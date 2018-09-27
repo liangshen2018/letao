@@ -16,6 +16,12 @@ ul,ol {
   color: red
 }
 
+.table.table-hover tr th,
+.table.table-hover tr td {
+  text-align: center;
+  vertical-align: middle;
+}
+
 .lt_side {
   width: 180px;
   height: 100%;
