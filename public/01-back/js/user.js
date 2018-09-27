@@ -20,6 +20,7 @@ $(function () {
          
         //  渲染分页
          $('#paginator').bootstrapPaginator({
+            numberOfPages: 10,
             bootstrapMajorVersion:3,//默认是2，如果是bootstrap3版本，这个参数必填
             currentPage:currentPage,//当前页
             totalPages: Math.ceil(info.total / pageSize),//总页数
