@@ -4,9 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./css/common.css">
   <title>Document</title>
 </head>
 <body>
-  <h1>首页</h1>
+  <!-- 侧边栏固定 -->
+  <div class="lt_side">
+    <div class="title"><a href="#">黑马26期</a></div>
+    <div class="user">
+        <img src="./images/default.png" alt="">
+        <p>超级管理员</p>
+    </div>
+    <div class="nav">
+      <ul>
+        <li>
+          <a href="user.html">
+            <i class="glyphicon glyphicon-user"></i>
+            <span>用户管理</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <i class="glyphicon glyphicon-list"></i>
+            <span>分类管理</span>
+          </a>
+          <div class="child">
+              <a href="first.html">一级分类</a>
+              <a href="second.html">二级分类</a>
+          </div>
+        </li>
+        <li><a href="product"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="lt_main">
+    <!-- 右侧上边固定栏 -->
+    <div class="lt_header">
+      <a class="pull-left" href="javascript:;"><i class="glyphicon glyphicon-align-justify"></i></a>
+      <a class="pull-right" href="javascript:;"><i class="glyphicon glyphicon-log-out"></i></a>
+    </div>
+
+    <div class="container-fluid ">
+        <ol class="breadcrumb">
+            <li><a href="index.html">管理系统</a></li>
+            <li class="active">首页</li>
+        </ol>
+    </div>
+  </div>
+
 </body>
+
 </html>

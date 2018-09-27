@@ -1,0 +1,104 @@
+
+a:link,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+ul,ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.lt_side {
+  width: 180px;
+  height: 100%;
+  position: fixed;
+  background-color: #222D32;
+  z-index: 999;
+}
+
+.lt_side .title a{
+  display: block;
+  width: 180px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 25px;
+  color: #fff;
+  background-color: #367FA9;
+  text-align: center;
+}
+
+.lt_side .user {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  height: 180px;
+}
+.lt_side .user img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: block;
+}
+.lt_side .user p {
+  height: 40px;
+  line-height: 40px;
+}
+.lt_side .nav li a {
+  display: block;
+  width: 180px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 40px;
+  border-left: 3px solid transparent;
+  color: #fff;
+}
+.lt_side .nav  i {
+  margin-right: 5px;
+}
+.lt_side .nav .child a {
+   padding-left: 60px;
+   display: none;
+}
+.lt_side .nav li a.current {
+  border-color: #367FA9;
+  background-color: #1D1F21;
+}
+
+/* 内容头部固定栏 */
+
+.lt_main {
+  padding-left: 180px;
+  padding-top: 50px;
+  height: 1000px;
+}
+.lt_header {
+  height: 50px;
+  width: 100%;
+  background-color: #3C8DBC;
+  position: fixed;
+  padding-left: 180px;  
+  z-index: 998;
+  top: 0;
+  left: 0;
+}
+
+.lt_header a {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+}
+
+/* 内容路径导航 */
+.breadcrumb {
+   margin: 20px 0;
+}

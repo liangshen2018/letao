@@ -42,10 +42,14 @@ $(function () {
       }
     }
   })
-
+  
+  // 添加重置功能
   $('[type=reset]').click(function(){
     $('#form').data('bootstrapValidator').resetForm();
   })
+
+
+  // 登入请求
   $('#form').on('success.form.bv',function (e) {
     e.preventDefault()
     $.ajax({
@@ -73,4 +77,7 @@ $(function () {
       }
     })    
   })
+
+
+
 })
