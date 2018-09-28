@@ -6,7 +6,11 @@ a:active {
   text-decoration: none;
 
 }
-
+.table.table-hover tr th,
+.table.table-hover tr td {
+  text-align: center;
+  vertical-align: middle;
+}
 .red {
   color: #f91;
 }
@@ -111,4 +115,11 @@ ul,ol {
 }
 .lt_main .breadcrumb {
   margin: 20px 0;
+}
+
+.lt_main .echarts_1,
+.lt_main .echarts_2 {
+  width: 46%;
+  height: 400px;
+
 }
