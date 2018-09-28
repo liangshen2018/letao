@@ -52,7 +52,7 @@ $(function () {
   })
   
   $('#form').on('success.form.bv',function (e) {
-    e.preventDefault()
+    // e.preventDefault()
     $.ajax({
       url:"/employee/employeeLogin",
       type:"post",

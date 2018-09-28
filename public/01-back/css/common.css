@@ -16,12 +16,23 @@ ul,ol {
   color: red
 }
 
+.mb_30 {
+  margin-bottom: 30px;
+}
+.mb_15 {
+  margin-bottom: 15px;
+}
+
 .table.table-hover tr th,
 .table.table-hover tr td {
   text-align: center;
   vertical-align: middle;
 }
+.modal .img_box img{
+  width: 100px;
+  height: 100px;
 
+}
 .lt_side {
   width: 180px;
   height: 100%;

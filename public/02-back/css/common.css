@@ -19,7 +19,9 @@ ul,ol {
   margin: 0;
   padding: 0;
 }
-
+.mb_15 {
+  margin-bottom: 15px;
+}
 .lt_side {
   width: 180px;
   height: 100%;
