@@ -70,6 +70,9 @@ $(function () {
       success: function ( info ) {
          if(info.success) {
            $('#myModal').modal('hide')
+           currentPage = 1
+           reader();
+           $('#form').data('bootstrapValidator').resetForm(true)
          }        
       }
     })
