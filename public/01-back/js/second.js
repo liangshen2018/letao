@@ -1,20 +1,7 @@
 
 $(function () {
   
-  // 图片本地预览
 
-  $('#file').change(function () {
-    console.log($(this)[0]);
-    
-    var file  = $(this)[0].files[0]
-    var fr = new FileReader();
-    fr.readAsDataURL(file)    
-    fr.onload = function () {
-      var res = fr.result
-      
-      $('.img_box img').attr('src',res)
-    }
-  })
 
   // 数据渲染
   var currentPage = 1;
@@ -47,6 +34,101 @@ $(function () {
     })
   }
  
+  $('#add').click(function () {
+    $.ajax({
+      url:'/category/queryTopCategoryPaging',
+      dataType:'json',
+      data:{
+        page:1,
+        pageSize:100
+      },
+      success: function ( info ) {
+        console.log(info);
+        $('.dropdown-menu').html(template('addtmp',info))
+      }
+    })
+  })
 
+  $('.dropdown-menu').on('click','a',function () {
+    var txt = $(this).text()
+    $('#btnTxt').text(txt)
+    var id = $(this).data('id')
+    $('[name="categoryId"]').val(id);
+
+    $('#form').data('bootstrapValidator').updateStatus('categoryId','VALID')
+  })
+ 
+
+
+  // 文件上传
+
+  $('#file').fileupload({
+    dataType:'json',
+    done:function (e,data ) {
+      var url = data.result.picAddr
+      $('.img_box img').attr('src',url)
+
+      $('[name="brandLogo"]').val(url)
+
+      $('#form').data('bootstrapValidator').updateStatus('brandLogo','VALID')
+      
+    }
+  })
+
+  $('#form').bootstrapValidator({
+    excluded: [],
+    // 指定校验时的图标显示，默认是bootstrap风格
+    feedbackIcons: {
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh'
+    },
+
+    fields:{
+      categoryId:{
+        validators:{
+          notEmpty:{
+            message:'请选择一级分类'
+          }
+        }
+      },
+      brandName:{
+        validators:{
+          notEmpty:{
+            message:'请输入二级分类'
+          }
+        }
+      },
+      brandLogo:{
+        validators:{
+          notEmpty:{
+            message:'请选择图片'
+          }
+        }
+      }
+    }
+  })
+
+
+  // 注册校验成功事件
+  $('#form').on('success.form.bv',function (e) {
+    e.preventDefault();
+    $.ajax({
+      url:'/category/addSecondCategory',
+      type:'post',
+      data:$('#form').serialize(),
+      dataType:'json',
+      success: function (info ) {
+        if(info.success){
+           $('#myModal').modal('hide')
+           currentPage = 1
+           reader();
+           $('#form').data('bootstrapValidator').resetForm(true)
+           $('#btnTxt').text('请输入一级分类');
+           $('.img_box img').attr('src','./images/none.png')
+        }
+      }
+    })
+  })
 
 })
