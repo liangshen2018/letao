@@ -113,7 +113,7 @@ ul {
   text-align: center;
   margin-bottom: 10px;
 }
-.lt_product li:nth-child(2n+1) {
+.lt_product li:nth-child(2n) {
   float: right;
 }
 .lt_product li a {
@@ -122,9 +122,12 @@ ul {
   border: 1px solid #ccc;
 }
 .lt_product li a img {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto
+}
+.lt_product li a p {
+  height: 40px;
 }
 .lt_product li .price {
   color: red;
